@@ -25,6 +25,23 @@ function generate_menu(array $menu_items)
     return $menu_html;
 } 
 
+function insertQnA(){
+    $json = file_get_contents("data/datas.json");
+    $data = json_decode($json, true);
+    $questions = $data["questions"];
+    $answers = $data["answers"];
+    for ($i = 0; $i < count($questions); $i++) {
+        echo '<button class="accordion">';
+            echo $questions[$i];
+        echo '</button>';
+        echo '<div class="panel">';
+            echo '<p>';
+                echo $answers[$i];
+            echo '</p>';
+        echo '</div>';
+    }
+}
+
 function generate_accordion(array $accordion_items){
     $accordion_html = '';
 

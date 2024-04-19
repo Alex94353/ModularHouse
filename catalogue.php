@@ -30,7 +30,7 @@ if (!include($file_path)) {
                     <p>Please fill out this form with the required information</p>
                 </div>
                 <!-- include form -->
-                <form action="completed.html">
+                <form id="catalogue_form" method="post" action="db/form_processing.php">
                     <fieldset>
                         <label for="answer1">How large is your house to be?
                             <textarea id="answer1" name="answer1" rows="3" cols="30" placeholder="Select answer:"></textarea>
