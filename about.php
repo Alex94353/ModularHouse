@@ -97,8 +97,15 @@ if (!include($file_path)) {
                 <div class="faq flex-center flex-column">
                     <h2>FAQ</h2>
                     <?php
-                    insertQnA();
+                    include_once "classes/QnA.php";
+
+                    use questionsanswers\QnA;
+
+                    $qna = new QnA();
+                    $qna->insertQnA();
+                    $qna->getQnA();
                     ?>
+
                 </div>
             </main>
             <?php
